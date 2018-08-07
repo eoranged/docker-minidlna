@@ -2,7 +2,7 @@
 
 set -e
 
-> /etc/minidlna.conf
+echo -n > /etc/minidlna.conf
 
 for VAR in `env`; do
     if [[ $VAR =~ ^MINIDLNA_ ]]; then
@@ -12,4 +12,4 @@ for VAR in `env`; do
     fi
 done
 
-exec /usr/bin/minidlna -d $@
+exec /usr/sbin/minidlnad -d $@
